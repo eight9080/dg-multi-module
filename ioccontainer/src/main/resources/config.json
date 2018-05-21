@@ -1,0 +1,12 @@
+[
+  {
+    "type": "ro.dg.business.IMeeting",
+    "mapTo": "ro.dg.business.Meeting",
+    "singleton": false
+  },
+  {
+    "type": "ro.dg.business.IMeetingService",
+    "mapTo": "ro.dg.business.MeetingService",
+    "singleton": false
+  }
+]
