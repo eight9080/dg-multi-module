@@ -80,7 +80,7 @@ public class BatchConfiguration {
 
     }
 
-    @Bean
+//    @Bean
     CommandLineRunner runner(JobLauncher launcher,
                              Job job,
                              @Value("${file}") File in,
