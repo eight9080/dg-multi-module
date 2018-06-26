@@ -19,6 +19,8 @@
     <modules>
         <module>ioccontainer</module>
         <module>batch-integration</module>
+        <module>producer</module>
+        <module>consumer</module>
     </modules>
 
     <dependencies>
