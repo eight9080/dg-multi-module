@@ -1,0 +1,50 @@
+
+== Local env
+Start zookeeper and kafka on local env
+```
+docker-compose -f docker-compose-confluent.yml up -d
+```
+
+Check containers
+
+```
+docker ps
+```
+
+Console producer
+```
+docker exec -it kafka /bin/bash
+```
+CLI Scripts
+```
+cd /opt/kafka/bin -> /usr/bin
+```
+Create topic
+
+Version 2.2
+```
+./kafka-topics --bootstrap-server kafka:9092 --create --topic simple-message --partitions 1 --replication-factor 1
+```
+Version 2.1
+```
+./kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic simple-message
+```
+Produce event
+
+Version 2.2
+```
+./kafka-console-producer.sh --broker-list localhost:9092 --topic simple-message
+```
+Version 2.1
+```
+kafka-console-producer --broker-list localhost:9092 --topic simple-message
+```
+Build and run application
+```
+mvn clean package && mvn spring-boot:run
+```
+
+Send a message
+```
+curl -X POST http://localhost:8080/api/message -d "message curl" -H "Content-Type: text/plain"
+```

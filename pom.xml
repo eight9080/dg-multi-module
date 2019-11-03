@@ -21,6 +21,8 @@
         <module>batch-integration</module>
         <module>producer</module>
         <module>consumer</module>
+        <module>dataflow-service</module>
+        <module>kafka-example</module>
     </modules>
 
     <dependencies>
